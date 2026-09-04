@@ -93,3 +93,9 @@ if frontend_dir.exists():
             status_code=200,
             content={"message": "PhishGuard-AI API is running. Frontend index.html not yet initialized."}
         )
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    print(f"[{settings.APP_NAME}] Starting server on 0.0.0.0:{port}...")
+    uvicorn.run("backend.main:app", host="0.0.0.0", port=port, access_log=True)
