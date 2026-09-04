@@ -29,9 +29,9 @@ COPY tests/ ./tests/
 # Expose default port
 EXPOSE 8000
 
-# Healthcheck
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+# Healthcheck (dynamically checks port assigned by cloud host)
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+    CMD python -c "import urllib.request, os; p=os.environ.get('PORT', 8000); urllib.request.urlopen(f'http://localhost:{p}/health')" || exit 1
 
 # Start via Python entrypoint (dynamically adapts to $PORT across cloud hosts)
 CMD ["python", "-m", "backend.main"]
