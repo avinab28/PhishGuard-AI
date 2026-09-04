@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhishGuard | Smart AI Link &amp; Message Threat Protection</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Ambient Aurora Glow Elements -->
+  <div class="cyber-grid"></div>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Floating Aesthetic Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand" onclick="switchTab('home')">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">PhishGuard<span class="brand-accent">.ai</span></span>
+          <span class="brand-tag">Smart Scam Protection</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-tab active" data-tab="home">Home</button>
+        <button class="nav-tab" data-tab="url-scanner">Check a Link</button>
+        <button class="nav-tab" data-tab="message-scanner">Check a Message</button>
+        <button class="nav-tab" data-tab="performance">AI Accuracy</button>
+        <button class="nav-tab" data-tab="history">Recent Scans</button>
+        <button class="nav-tab" data-tab="about">Why It's Safe</button>
+      </nav>
+
+      <div class="system-status-indicator" id="systemStatusBadge">
+        <span class="status-dot pulsing"></span>
+        <span class="status-label" id="systemStatusText">AI Ready</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Viewports -->
+  <main class="main-content">
+
+    <!-- TAB 1: HOME VIEW -->
+    <section id="view-home" class="tab-view active">
+      <div class="hero-section">
+        <div class="hero-badge">
+          ✨ Private, Instant AI Protection
+        </div>
+        <h1 class="hero-title">
+          Spot fake links &amp; scams <br/><span class="gradient-text">before they trick you.</span>
+        </h1>
+        <p class="hero-subtitle">
+          PhishGuard analyzes suspicious web links, urgent text messages, and unexpected emails in seconds — completely privately, without ever visiting or opening the link.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="switchTab('url-scanner')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+            Check a Link
+          </button>
+          <button class="btn btn-secondary" onclick="switchTab('message-scanner')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Check a Message
+          </button>
+          <button class="btn btn-outline" onclick="switchTab('performance')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            See AI Accuracy
+          </button>
+        </div>
+
+        <div class="philosophy-banner">
+          <div class="pledge-card">
+            <div class="pledge-icon">🛡️</div>
+            <div>
+              <h4>100% Private &amp; Safe</h4>
+              <p>We analyze the link structure offline. The link is never opened, keeping your device completely safe from malware and trackers.</p>
+            </div>
+          </div>
+          <div class="pledge-card">
+            <div class="pledge-icon">⚡</div>
+            <div>
+              <h4>Instant AI Analysis</h4>
+              <p>Trained on thousands of real-world threats to spot deceptive brand lookalikes, weird domains, and fake alerts in milliseconds.</p>
+            </div>
+          </div>
+          <div class="pledge-card">
+            <div class="pledge-icon">💡</div>
+            <div>
+              <h4>Clear, Human Advice</h4>
+              <p>No confusing technical jargon. We show you exactly what looks suspicious and what you should do next.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Highlights Grid -->
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-tag">Web Link Protection</div>
+          <h3>Deceptive URL Detector</h3>
+          <p>Scans web addresses for spoofed bank portals, misleading domain extensions (.xyz, .top), and hidden character tricks designed to fool human eyes.</p>
+          <div class="tech-stack-pills">
+            <span>Domain Verification</span>
+            <span>Character Entropy</span>
+            <span>Neural ANN</span>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-tag">SMS &amp; Email Protection</div>
+          <h3>Social Engineering Scanner</h3>
+          <p>Identifies fake package delivery notices, fake lottery prizes, and urgent messages trying to pressure you into revealing passwords or PIN codes.</p>
+          <div class="tech-stack-pills">
+            <span>Urgency Detection</span>
+            <span>Scam Keywords</span>
+            <span>Sequence RNN</span>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-tag">Smart Explanations</div>
+          <h3>Transparent Insights</h3>
+          <p>Every scan gives you a clear safety score, highlighted triggers, and practical defense recommendations so you always know what to do.</p>
+          <div class="tech-stack-pills">
+            <span>Actionable Tips</span>
+            <span>Color-Coded Risk</span>
+            <span>Instant Feedback</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: URL SCANNER -->
+    <section id="view-url-scanner" class="tab-view">
+      <div class="scanner-header">
+        <h2>Check a Suspicious Link</h2>
+        <p>Received a strange link in an email, text message, or chat? Paste it below to see if it's safe.</p>
+      </div>
+
+      <div class="scanner-card">
+        <form id="urlScanForm" onsubmit="handleUrlSubmit(event)">
+          <div class="form-group">
+            <label for="urlInput">Enter or paste the web link:</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="urlInput"
+                placeholder="e.g. https://google.com or http://paypal-security-alert.xyz"
+                required
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="submit" class="btn btn-primary" id="urlSubmitBtn">
+                <span class="btn-text">Check Link</span>
+                <span class="spinner" style="display:none;"></span>
+              </button>
+            </div>
+            <div class="form-hint">
+              <span>🔒 Zero-Execution Guarantee: This link will never be visited or clicked.</span>
+              <span id="urlCharCounter">0 / 2048 chars</span>
+            </div>
+          </div>
+        </form>
+
+        <div class="presets-container">
+          <span class="presets-label">Try a sample:</span>
+          <button class="preset-btn" onclick="applyUrlPreset('https://www.google.com/search?q=cybersecurity')">Google Search (Safe)</button>
+          <button class="preset-btn" onclick="applyUrlPreset('https://github.com/torvalds/linux')">GitHub (Safe)</button>
+          <button class="preset-btn warning" onclick="applyUrlPreset('http://paypal-security-update.account-verification-login.com/auth/login.php')">Fake PayPal Login</button>
+          <button class="preset-btn critical" onclick="applyUrlPreset('http://192.168.1.105:8080/secure/bankofamerica-login/update.html')">Suspicious Raw IP</button>
+          <button class="preset-btn warning" onclick="applyUrlPreset('http://appleid.apple.com.verify-billing-info.xyz/account/manage')">Deceptive .xyz Link</button>
+        </div>
+      </div>
+
+      <!-- URL Scan Results Container -->
+      <div id="urlResultContainer" class="result-container" style="display: none;"></div>
+    </section>
+
+    <!-- TAB 3: MESSAGE SCANNER -->
+    <section id="view-message-scanner" class="tab-view">
+      <div class="scanner-header">
+        <h2>Check a Suspicious Message</h2>
+        <p>Got an alarming SMS, WhatsApp, or email asking you to verify your account or claim money? Paste it here.</p>
+      </div>
+
+      <div class="scanner-card">
+        <form id="messageScanForm" onsubmit="handleMessageSubmit(event)">
+          <div class="form-group">
+            <label for="messageInput">Paste the message text here:</label>
+            <textarea
+              id="messageInput"
+              rows="5"
+              placeholder="e.g. URGENT: Your bank account has been suspended! Verify your credentials immediately at..."
+              required
+              spellcheck="false"
+            ></textarea>
+            <div class="form-hint">
+              <span>Evaluated by our intelligent message neural network.</span>
+              <span id="messageCharCounter">0 / 10000 chars</span>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="messageSubmitBtn">
+              <span class="btn-text">Check Message</span>
+              <span class="spinner" style="display:none;"></span>
+            </button>
+          </div>
+        </form>
+
+        <div class="presets-container">
+          <span class="presets-label">Try a sample:</span>
+          <button class="preset-btn" onclick="applyMessagePreset('Hey, are we still meeting for lunch at the cafeteria at 12:30?')">Safe: Lunch with friends</button>
+          <button class="preset-btn" onclick="applyMessagePreset('Please find attached the updated quarterly invoice for the design work.')">Safe: Business invoice</button>
+          <button class="preset-btn critical" onclick="applyMessagePreset('URGENT: Your Chase Bank account has been suspended! Verify your credentials immediately at http://chase-bank-alert.service-notification.top or your account will be closed.')">Scam: Fake Chase Bank Alert</button>
+          <button class="preset-btn warning" onclick="applyMessagePreset('Congratulations! You have won $5,000 in our weekly lottery prize draw! Claim your reward now by visiting http://prize-reward.xyz')">Scam: Lottery Prize Bait</button>
+          <button class="preset-btn critical" onclick="applyMessagePreset('SECURITY ALERT: Unauthorized login attempt detected from an unknown IP. Confirm your password and OTP immediately.')">Scam: Password Phish</button>
+        </div>
+      </div>
+
+      <!-- Message Results Container -->
+      <div id="messageResultContainer" class="result-container" style="display: none;"></div>
+    </section>
+
+    <!-- TAB 4: MODEL PERFORMANCE & METRICS -->
+    <section id="view-performance" class="tab-view">
+      <div class="scanner-header">
+        <h2>AI Performance &amp; Accuracy</h2>
+        <p>Real-time metrics served directly from our neural network test evaluations.</p>
+      </div>
+
+      <div class="refresh-bar">
+        <button class="btn btn-outline btn-sm" onclick="loadMetrics()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+          Refresh AI Metrics
+        </button>
+        <span class="metrics-timestamp" id="metricsLastLoaded">Not yet loaded</span>
+      </div>
+
+      <div class="models-grid" id="modelsGridContainer">
+        <div class="loading-placeholder" style="text-align: center; padding: 3rem; grid-column: 1 / -1;">
+          <div class="spinner"></div>
+          <p style="margin-top: 1rem; color: var(--text-muted);">Loading live model metrics...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: AUDIT HISTORY -->
+    <section id="view-history" class="tab-view">
+      <div class="scanner-header">
+        <h2>Recent Activity Log</h2>
+        <p>Review the links and messages you have recently checked.</p>
+      </div>
+
+      <div class="history-controls">
+        <button class="btn btn-outline btn-sm" onclick="loadScanHistory()">Refresh</button>
+        <button class="btn btn-outline btn-sm btn-danger" onclick="clearScanHistory()">Clear All History</button>
+      </div>
+
+      <div class="history-table-wrapper">
+        <table class="history-table" id="historyTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Type</th>
+              <th>Scanned Item</th>
+              <th>Risk Level</th>
+              <th>Threat Score</th>
+              <th>Verdict</th>
+              <th>Date &amp; Time</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <tr>
+              <td colspan="7" class="empty-state">No scans recorded yet. Try checking a link or message above.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 6: ABOUT & SAFETY PHILOSOPHY -->
+    <section id="view-about" class="tab-view">
+      <div class="scanner-header">
+        <h2>Why PhishGuard is Safer</h2>
+        <p>How we protect you without ever clicking or visiting the links you scan.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🛡️</div>
+          <h3>Why We Never Click Your Links</h3>
+          <p>
+            Traditional scanners open links in a browser to see what loads. This creates serious dangers:
+          </p>
+          <ul class="about-list">
+            <li><strong>Drive-by Viruses:</strong> Simply opening a malicious page can infect devices with malware.</li>
+            <li><strong>Attacker Tracking:</strong> Clicking links with tracking codes lets scammers know your email or phone number is active.</li>
+            <li><strong>Sneaky Pages:</strong> Attackers often show innocent pages to scanners and malicious pages to real people.</li>
+          </ul>
+          <p class="highlight-quote">
+            PhishGuard operates on a <strong>strict Zero-Execution guarantee</strong>: we analyze links entirely by inspecting their structure, so your device remains 100% safe.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">🧠</div>
+          <h3>How Our Dual AI Works</h3>
+          <p>Different scams need different approaches:</p>
+          <div class="pipeline-spec">
+            <h4>Link Scanner (ANN Model)</h4>
+            <p>Analyzes 22 structural indicators: tricky domain names, fake brand keywords, raw IP addresses, and encryption protocols.</p>
+          </div>
+          <div class="pipeline-spec">
+            <h4>Message Scanner (RNN Model)</h4>
+            <p>Reads the flow of words in SMS and emails to detect psychological urgency, financial lures, and credential requests.</p>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">⚖️</div>
+          <h3>How to Read Your Risk Level</h3>
+          <p>
+            PhishGuard translates complex neural network math into clear, actionable color-coded guidance:
+          </p>
+          <div class="risk-tiers-breakdown">
+            <div class="tier-item">
+              <span class="tier-badge low">LOW RISK (&lt; 40%)</span>
+              <span>Looks safe and matches trusted website patterns. Standard vigilance advised.</span>
+            </div>
+            <div class="tier-item">
+              <span class="tier-badge medium">MEDIUM RISK (40% – 69%)</span>
+              <span>Proceed with caution. Unusual structure or urgent wording detected.</span>
+            </div>
+            <div class="tier-item">
+              <span class="tier-badge high">HIGH RISK (≥ 70%)</span>
+              <span>Likely phishing scam. Do NOT visit, reply, or enter any passwords.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast" style="display: none;"></div>
+
+  <!-- Vanilla Scripts -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

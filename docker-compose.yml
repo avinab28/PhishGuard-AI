@@ -1,0 +1,23 @@
+services:
+  phishguard-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phishguard-ai-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=PhishGuard-AI
+      - DEBUG=False
+      - RISK_THRESHOLD_LOW=0.40
+      - RISK_THRESHOLD_HIGH=0.70
+    volumes:
+      - ./backend/scans.db:/app/backend/scans.db
+      - ./models:/app/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s

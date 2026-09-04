@@ -1,0 +1,50 @@
+{
+  "model_type": "URL Artificial Neural Network (ANN)",
+  "architecture": "Input(22) -> Dense(64, ReLU) -> Dropout(0.3) -> Dense(32, ReLU) -> Dropout(0.2) -> Dense(1, Sigmoid)",
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "loss": 0.0,
+  "confusion_matrix": [
+    [
+      27,
+      0
+    ],
+    [
+      0,
+      27
+    ]
+  ],
+  "dataset_splits": {
+    "train": 252,
+    "validation": 54,
+    "test": 54
+  },
+  "features_count": 22,
+  "feature_names": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "count_dots",
+    "count_hyphens",
+    "count_underscores",
+    "count_slashes",
+    "count_at",
+    "count_question",
+    "count_percent",
+    "count_equal",
+    "count_digits",
+    "digits_ratio",
+    "is_https",
+    "has_ip",
+    "subdomain_count",
+    "suspicious_keywords_count",
+    "suspicious_tld",
+    "domain_entropy",
+    "has_punycode",
+    "has_port",
+    "double_slash_in_path"
+  ],
+  "trained_at": "2026-09-04T08:59:13.442931+00:00"
+}
