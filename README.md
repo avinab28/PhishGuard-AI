@@ -1,3 +1,13 @@
+---
+title: PhishGuard AI
+emoji: 🛡️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # PhishGuard-AI: AI-Powered Phishing URL & Message Threat Analyzer
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
